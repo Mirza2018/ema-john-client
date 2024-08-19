@@ -31,7 +31,7 @@ const Shop = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products?page=${currentPage}&limit=${itemsPerPages}`)
+        fetch(`https://ema-jhon-server.onrender.com/products?page=${currentPage}&limit=${itemsPerPages}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [currentPage, itemsPerPages]);
@@ -40,7 +40,7 @@ const Shop = () => {
     // useEffect(() => {
     //     async function fetchData() {
 
-    //         const response = await fetch(`http://localhost:5000/products?page=${currentPage}&limit=${itemsPerPages}`)
+    //         const response = await fetch(`https://ema-jhon-server.onrender.com/products?page=${currentPage}&limit=${itemsPerPages}`)
 
 
     //         const data = await response.json();
@@ -53,7 +53,7 @@ const Shop = () => {
         const storedCart = getShoppingCart();
         const ids = Object.keys(storedCart)
 
-        fetch('http://localhost:5000/productsByIds', {
+        fetch('https://ema-jhon-server.onrender.com/productsByIds', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
